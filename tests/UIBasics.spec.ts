@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import {locators} from '../locators/locators';
+import {locators} from '../support/locators';
 
 test('First Playwright Test', async ({ page, browser }) => {
     const context = await browser.newContext();
