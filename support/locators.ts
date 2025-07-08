@@ -35,5 +35,8 @@ export const locatorsClientApp = {
 
     // Login Page Locators for existing account
     signOutButton: 'ul li button',
+
+    // products Page Locators
+    productCard: '.card .card-body h5 b',
 }
 

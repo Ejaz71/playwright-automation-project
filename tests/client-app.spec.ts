@@ -4,7 +4,9 @@ import { loginWithValidCredentials } from '../support/methods';
 
 test.describe('Client Application Tests', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://rahulshettyacademy.com/client/');
+        await page.goto('https://rahulshettyacademy.com/client/', {
+            waitUntil: 'domcontentloaded',
+        });
     });
 
     test('register an account', async ({ page }) => {
@@ -31,12 +33,15 @@ test.describe('Client Application Tests', () => {
         
     });
 
-    test.only('login with existing account', async ({ page }) => {
+    test('login with existing account', async ({ page }) => {
         await loginWithValidCredentials(page);
     });
 
-    test('show all products', async ({ page }) => {
+    test.only('show all products', async ({ page }) => {
         await loginWithValidCredentials(page);
-        
+        await page.waitForEvent('load'); // Ensure the page is fully loaded
+        const allProducts = await page.locator(locatorsClientApp.productCard).allTextContents();
+        // Log all products to the console
+        console.log('All Products:', allProducts);
     });
 });
