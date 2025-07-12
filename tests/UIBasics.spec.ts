@@ -38,3 +38,4 @@ test('Login to site with correct credentials', async ({ page }) => {
     await expect(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop');  
              
 });
+

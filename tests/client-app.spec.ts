@@ -42,6 +42,10 @@ test.describe('Client Application Tests', () => {
         await page.waitForEvent('load'); // Ensure the page is fully loaded
         const allProducts = await page.locator(locatorsClientApp.productCard).allTextContents();
         // Log all products to the console
-        console.log('All Products:', allProducts);
+        console.log('All Products:',  allProducts);
+        console.log('test')
     });
+
+    
+
 });
